@@ -1,0 +1,129 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #f8f8f8; /* Light grey background for navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.navbar .logo img {
+    width: 120px; /* Adjust the logo size */
+    height: auto;
+}
+
+/* Navbar Links Styling */
+.nav-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 20px; /* Space between links */
+}
+
+.nav-links a {
+    color: #333; /* Default text color */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px; /* Padding around links */
+    border-radius: 5px; /* Rounded corners for the links */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+    background-color: #e0e0e0; /* Slightly darker grey background on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Mobile Hamburger Menu */
+.hamburger-menu {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu - Only visible when hamburger is clicked */
+.nav-links.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust depending on navbar height */
+    left: 0;
+    background-color: #f8f8f8; /* Light background for mobile */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Hide mobile menu by default */
+}
+
+.nav-links.mobile ul {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links.mobile li {
+    margin: 10px 0; /* Space between links in mobile menu */
+}
+
+/* Toggle Hamburger to Cross on Click */
+.hamburger-menu.open div:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+.hamburger-menu.open div:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger-menu.open div:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the default nav links on small screens */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger icon on small screens */
+    }
+
+    .nav-links.mobile {
+        display: flex; /* Show mobile links when the hamburger is clicked */
+    }
+}
